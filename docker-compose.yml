@@ -1,0 +1,63 @@
+version: "3.8"
+
+services:
+
+  blockchain:
+    build: ./blockchain
+    container_name: esg-ganache
+    ports:
+      - "8545:8545"
+    networks:
+      - esgnet
+    volumes:
+      - ./blockchain:/app
+    command: >
+      sh -c "npx hardhat node --hostname 0.0.0.0"
+      
+  mongodb:
+    image: mongo:6
+    container_name: esg-mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - esgnet
+    volumes:
+      - mongo-data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: esg-backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGODB_URI=mongodb://mongodb:27017/esg_database
+      - BLOCKCHAIN_RPC=http://blockchain:8545
+      - JWT_SECRET=your_super_secret_jwt_key
+    depends_on:
+      - blockchain
+      - mongodb
+    networks:
+      - esgnet
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build: ./frontend
+    container_name: esg-frontend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:5000
+    networks:
+      - esgnet
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+volumes:
+  mongo-data:
+
+networks:
+  esgnet:

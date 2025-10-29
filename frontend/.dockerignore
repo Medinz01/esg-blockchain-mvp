@@ -1,0 +1,6 @@
+# Ignore node_modules, as it's installed inside the container
+node_modules
+
+# Ignore build output
+dist
+.vite

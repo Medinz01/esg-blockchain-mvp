@@ -1,0 +1,487 @@
+{
+  "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "abi": [
+    {
+      "type": "constructor",
+      "stateMutability": "undefined",
+      "payable": false,
+      "inputs": []
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "CompanyRegistered",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "companyAddress",
+          "indexed": true
+        },
+        {
+          "type": "string",
+          "name": "name",
+          "indexed": false
+        },
+        {
+          "type": "uint256",
+          "name": "timestamp",
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "ESGDataSubmitted",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "recordId",
+          "indexed": true
+        },
+        {
+          "type": "address",
+          "name": "company",
+          "indexed": true
+        },
+        {
+          "type": "string",
+          "name": "dataType",
+          "indexed": false
+        },
+        {
+          "type": "uint256",
+          "name": "timestamp",
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "ESGDataVerified",
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "recordId",
+          "indexed": true
+        },
+        {
+          "type": "address",
+          "name": "verifier",
+          "indexed": true
+        },
+        {
+          "type": "uint256",
+          "name": "timestamp",
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "VerifierAuthorized",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "verifier",
+          "indexed": true
+        },
+        {
+          "type": "uint256",
+          "name": "timestamp",
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "VerifierRevoked",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "verifier",
+          "indexed": true
+        },
+        {
+          "type": "uint256",
+          "name": "timestamp",
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "admin",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "address",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "authorizeVerifier",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "address",
+          "name": "_verifier"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "authorizedVerifiers",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "address",
+          "name": ""
+        }
+      ],
+      "outputs": [
+        {
+          "type": "bool",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "companies",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "address",
+          "name": ""
+        }
+      ],
+      "outputs": [
+        {
+          "type": "address",
+          "name": "companyAddress"
+        },
+        {
+          "type": "string",
+          "name": "name"
+        },
+        {
+          "type": "string",
+          "name": "registrationId"
+        },
+        {
+          "type": "bool",
+          "name": "isRegistered"
+        },
+        {
+          "type": "uint256",
+          "name": "registrationTimestamp"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "companyRecordIds",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "address",
+          "name": ""
+        },
+        {
+          "type": "uint256",
+          "name": ""
+        }
+      ],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "esgRecords",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": ""
+        }
+      ],
+      "outputs": [
+        {
+          "type": "address",
+          "name": "company"
+        },
+        {
+          "type": "string",
+          "name": "companyName"
+        },
+        {
+          "type": "uint256",
+          "name": "timestamp"
+        },
+        {
+          "type": "string",
+          "name": "dataType"
+        },
+        {
+          "type": "string",
+          "name": "value"
+        },
+        {
+          "type": "string",
+          "name": "unit"
+        },
+        {
+          "type": "string",
+          "name": "verificationDocHash"
+        },
+        {
+          "type": "address",
+          "name": "verifier"
+        },
+        {
+          "type": "bool",
+          "name": "isVerified"
+        },
+        {
+          "type": "string",
+          "name": "comments"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "getCompanyRecords",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "address",
+          "name": "_company"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "uint256[]",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "getRecord",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "_recordId"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "tuple",
+          "name": "",
+          "components": [
+            {
+              "type": "address",
+              "name": "company"
+            },
+            {
+              "type": "string",
+              "name": "companyName"
+            },
+            {
+              "type": "uint256",
+              "name": "timestamp"
+            },
+            {
+              "type": "string",
+              "name": "dataType"
+            },
+            {
+              "type": "string",
+              "name": "value"
+            },
+            {
+              "type": "string",
+              "name": "unit"
+            },
+            {
+              "type": "string",
+              "name": "verificationDocHash"
+            },
+            {
+              "type": "address",
+              "name": "verifier"
+            },
+            {
+              "type": "bool",
+              "name": "isVerified"
+            },
+            {
+              "type": "string",
+              "name": "comments"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "isCompanyRegistered",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "address",
+          "name": "_company"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "bool",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "registerCompany",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "string",
+          "name": "_name"
+        },
+        {
+          "type": "string",
+          "name": "_registrationId"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "revokeVerifier",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "address",
+          "name": "_verifier"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "submitESGData",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "string",
+          "name": "_dataType"
+        },
+        {
+          "type": "string",
+          "name": "_value"
+        },
+        {
+          "type": "string",
+          "name": "_unit"
+        },
+        {
+          "type": "string",
+          "name": "_verificationDocHash"
+        },
+        {
+          "type": "string",
+          "name": "_comments"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "totalCompanies",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "totalRecords",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "uint256",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "verifyESGData",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "uint256",
+          "name": "_recordId"
+        },
+        {
+          "type": "bool",
+          "name": "_isVerified"
+        },
+        {
+          "type": "string",
+          "name": "_comments"
+        }
+      ],
+      "outputs": []
+    }
+  ]
+}

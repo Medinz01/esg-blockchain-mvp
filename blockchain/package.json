@@ -1,0 +1,23 @@
+{
+  "name": "blockchain",
+  "version": "1.0.0",
+  "description": "ESG Blockchain MVP - Smart Contracts",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "hardhat run scripts/deploy.js --network ganache",
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "clean": "hardhat clean"
+  },
+  "keywords": [
+    "blockchain",
+    "esg",
+    "smart-contracts"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.19.5"
+  }
+}

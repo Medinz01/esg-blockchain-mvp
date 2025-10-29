@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 0 0% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    /* Primary: Sustainability Green */
+    --primary: 130 46% 33%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 122 39% 49%;
+    --primary-dark: 130 54% 24%;
+
+    /* Secondary: Trust Blue */
+    --secondary: 207 76% 47%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 207 89% 61%;
+
+    /* Success: Verified Green */
+    --success: 122 39% 49%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning: Pending Orange */
+    --warning: 36 100% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Destructive: Error Red */
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 46%;
+
+    --accent: 130 46% 95%;
+    --accent-foreground: 130 46% 33%;
+
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 130 46% 33%;
+
+    --radius: 0.5rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(130 46% 33%) 0%, hsl(174 72% 35%) 100%);
+    --gradient-hero: linear-gradient(to bottom, hsl(130 46% 33% / 0.05) 0%, hsl(0 0% 98%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(130 46% 98%) 100%);
+  }
+
+  .dark {
+    --background: 130 15% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 130 15% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 130 15% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 122 39% 49%;
+    --primary-foreground: 130 54% 10%;
+    --primary-light: 122 39% 59%;
+    --primary-dark: 130 54% 24%;
+
+    --secondary: 207 89% 61%;
+    --secondary-foreground: 207 76% 10%;
+    --secondary-light: 207 89% 71%;
+
+    --success: 122 39% 49%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 36 100% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --muted: 130 15% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 130 46% 15%;
+    --accent-foreground: 122 39% 59%;
+
+    --border: 130 15% 20%;
+    --input: 130 15% 20%;
+    --ring: 122 39% 49%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(122 39% 49%) 0%, hsl(174 72% 45%) 100%);
+    --gradient-hero: linear-gradient(to bottom, hsl(122 39% 49% / 0.1) 0%, hsl(130 15% 8%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(130 15% 10%) 0%, hsl(130 30% 12%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .blockchain-hash {
+    @apply font-mono text-sm;
+  }
+}
