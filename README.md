@@ -1,5 +1,8 @@
 # ESG Blockchain MVP
 
+![CI](https://github.com/your-username/esg-blockchain-mvp/actions/workflows/ci.yml/badge.svg)
+
+
 A full-stack ESG data registry and verification app using **React**, **Node.js**, **MongoDB**, **Ethereum** (smart contracts), and **Docker Compose**.
 
 ## Features

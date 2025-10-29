@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: ['main', 'master']
+  pull_request:
+    branches: ['main', 'master']
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    services:
+      mongo:
+        image: mongo:6
+        ports: [27017:27017]
+      ganache:
+        image: trufflesuite/ganache-cli
+        ports: [8545:8545]
+        options: --detached
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Backend install & test
+        run: |
+          cd backend
+          npm install
+          npm test
