@@ -37,6 +37,7 @@ docker-compose up -d --build
 **To deploy contracts and authorize verifier:**
 
 docker-compose exec blockchain npx hardhat run scripts/deploy.mjs --network ganache
+
 docker-compose exec blockchain npx hardhat run scripts/addVerifier.mjs --network ganache
 
 
@@ -70,8 +71,11 @@ db.users.updateOne({ email: "verifier@test.com" }, { $set: { role: "verifier" } 
 
 .
 ├── backend/
+
 ├── frontend/
+
 ├── blockchain/
+
 ├── docker-compose.yml
 
 
